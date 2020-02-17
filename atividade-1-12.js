@@ -1,19 +1,23 @@
 var user = require('readline-sync');
 
 var nome = user.question("Insira o seu nome: ")
-var sexo = user.question("Insira o sexo [F] ou [M]: ")
-var estcivil = user.question("Insira o seu estado civil (Solteiro ou Casado): ")
-
-if(sexo != m || sexo != M && estcivil == casada || estcivil == CASADA){
-   var tempo = user.question("Insira o tempo de casada: ") 
-   console.log(nome + sexo + estcivil + tempo)
-} else if(sexo != m || sexo != M && estcivil == solteira || estcivil == SOLTEIRA){
-    console.log(nome + sexo + estcivil)
-}
-
-if(sexo != f || sexo != F && estcivil == casado || estcivil == CASADO){
-    console.log(nome + sexo + estcivil)
-} else if (sexo != f || sexo != F && estcivil == solteiro || estcivil == SOLTERIO)
-{
-    console.log(nome + sexo + estcivil)
+var sexo = user.question("Qual o seu sexo? F-Feminino M-Masculino ");
+var estadocivil = user.question("Qual o seu estado civil? 1-Casado(a) 2-Solteiro(a)" );
+var tempcas;
+if(sexo == "F" || sexo == "f"){
+        if(estadocivil == 1){
+        tempcas = user.question("A quantos anos voce esta casada?");
+        console.log(nome + " Voce é casada a " + tempcas + " anos");
+    }else{
+        console.log(nome + " Sexo feminino e solteira!");
+    }
+}else if(sexo == "M" || sexo == "m"){
+    if(estadocivil == 1){
+        tempcas = user.question(nome + " A quantos anos voce é casado?");
+        console.log(nome + " Voce e casado a " + tempcas + " anos");
+    }else{
+        console.log(nome + " Sexo masculino e solteiro");
+    }
+}else{
+    console.log("Dados de entrada incorretos");
 }
