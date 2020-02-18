@@ -1,3 +1,6 @@
+/*Faça um programa onde o usuário irá escolhe se que Converte graus Celsius para Fahrenheit ou Fahrenheit para Celsius. 
+*/
+
 /* function toCelsius(fahrenheit) {
   return (5/9) * (f-32);
 }
