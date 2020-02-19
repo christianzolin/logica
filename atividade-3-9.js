@@ -7,8 +7,13 @@ ANANAB
 var user = require('readline-sync');
 var palavra = user.question ("Qual a palavra? ");
 var tamanho = palavra.length;
-
-while(tamanho >= 0){
+var resultado = "";
+while(tamanho){
+    resultado = resultado + palavra[--tamanho]
+}
+console.log(resultado)
+/*
+while(tamanho){
     console.log(palavra.charAt(tamanho));  
     tamanho = tamanho - 1;
-}
+}*/
