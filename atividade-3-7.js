@@ -6,10 +6,13 @@ Se o usuário inserir qualquer coisa diferente de A ou B o programa deve dizer q
 */
 
 var user = require('readline-sync');
-
-var ent = user.question("Insira A para fechar ou B para realizar uma soma");
+var ent = user.question("Insira A para fechar ou B para realizar uma soma: ");
 while(true){
-if(ent == "a" || ent == "A"){
+if( ent != "a" && ent != "A" && ent != "b" && ent != "B"){
+        console.log("dados incorretos")
+        var ent = user.question("Insira A para fechar ou B para realizar outra soma: ")
+}
+else if(ent == "a" || ent == "A"){
     console.log("Encerrar programa")
     break;
 }
@@ -18,10 +21,6 @@ else if(ent == "b" || ent == "B"){
     var n2 = user.questionInt("Digite outro numero: ")
     var soma = n1 + n2;
     console.log("O resultado da sua soma é: " + soma)
-    var ent = user.question("Insira A para fechar ou B para realizar outra soma: ")
-        
-}else{
-    console.log("dados incorretos")
-    break;
+    var ent = user.question("Insira A para fechar ou B para realizar outra soma: ")      
 }
 } 
