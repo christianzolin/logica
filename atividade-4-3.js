@@ -10,12 +10,8 @@ var z = "*"
 var num = user.questionInt("Insira um numero: ")
     while(num<=0){
         var num = user.questionInt("Insira um numero: ")
-        
     }
-
 for(var x = 0;x<num;x++){
-
 console.log(z)
 z = z + "*"
 }
-
