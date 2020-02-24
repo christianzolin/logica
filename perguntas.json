@@ -1,5 +1,4 @@
-{
- "perguntas": [
+{ "perguntas": [
     {   "pergun": "De quantos anos e constituido um seculo?\n",
         "alternativas": "A) 50 \nB) 100 \nC) 1,000 \nD) 1,500 \n",
         "res":"b"
