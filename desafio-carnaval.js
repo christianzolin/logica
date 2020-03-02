@@ -44,7 +44,7 @@ var perguntas = [
             return this.pergun + this.alternativas;
         }
     },
-    {   pergun: "Que imperador pos fogo em Roma?",
+    {   pergun: "Que imperador pos fogo em Roma?\n",
         alternativas: "A) Trajano \nB) Nero \nC) Brutus \nD) Caligula \n" ,
         res :"b",
         perfull: function () {
@@ -58,22 +58,65 @@ var perguntas = [
             return this.pergun + this.alternativas;
         }
     },
-    {   pergun: "Quantos quilates tem o ouro puro?",
+    {   pergun: "Quantos quilates tem o ouro puro?\n",
         alternativas: "A) 18 \nB) 20 \nC) 24 \nD) 30 \n" ,
         res:"c",
         perfull: function () {
             return this.pergun + this.alternativas;
         }
     },
-    
-    {   pergun: "Qual oceano tem o maior volume de agua?",
+    {   pergun: "Qual oceano tem o maior volume de agua?\n",
         alternativas: "A) Atlantico \nB) Pacifico\nC) Indico\nD) Artico \n" ,
         res:"b",
         perfull: function () {
             return this.pergun + this.alternativas;
         }
+    },
+    {   pergun: "Qual é o nome dado ao estado da água em forma de gelo? \n",
+        alternativas: "A) LÍQUIDO \nB) SÓLIDO \nC) GASOSO \nD) VAPOROSO\n",
+        res:"b",
+        perfull: function(){
+            return this.pergun + this.alternativas;
+        }
+    },
+    {   pergun: "Quem é a namorada do Mickey?\n",
+        alternativas:"A) MARGARIDA \nB) MINNIE \nC) A PEQUENA SEREIA \nD) OLÍVIA PALITO\n",
+        res:"b",
+        perfull: function(){
+            return this.pergun + this.alternativas;
+        }
+    },
+    {   pergun: "Qual é o personagem do folclore brasileiro que tem uma perna só?\n",
+        alternativas:"A) CUCA \nB) NEGRINHO DO PASTOREIO \nC) BOITATÁ \nD)SACI-PERERÊ\n",
+        res:"d",
+        perfull: function(){
+            return this.pergun + this.alternativas;
+        }
     }
+    // {
+        
+    //     pergun:
+    //     alternativas:
+    //     perfull: function(){
+    //         return this.pergun + this.alternativas;
+    //     }
+    // },
+    // {
+        
+    //     pergun:
+    //     alternativas:
+    //     perfull: function(){
+    //         return this.pergun + this.alternativas;
+    //     }
+    // }
+
 ]
+
+// pergun:
+// alternativas:
+// perfull: function(){
+//     return this.pergun + this.alternativas;
+// }
 
 var play = true;
 var n = 0;
@@ -82,18 +125,20 @@ var pulo = 3
 
 while(play = true){
     console.log("Comeca agora o jogo de perguntas! ");
+    pulo = 3
     while(n2<10){
-        n = Math.floor(Math.random() * 10);
         console.log("Essa pergunta vale "+premio[n2]+" reais");
-        var respUsu = user.question("Pergunta: \n "+perguntas[n].perfull()+"Zero para pular");
+        var respUsu = user.question("Pergunta: \n "+perguntas[n].perfull()+"Zero para pular\n");
         if(respUsu == "0" && pulo > 1){
-            n = Math.floor(Math.random() * 10);
-            var respUsu = user.question("Pergunta: \n "+perguntas[n].perfull()+"Zero");
+            n = Math.floor(Math.random() * 13);
+            var respUsu = user.question("Pergunta: \n "+perguntas[n].perfull()+"Zero\n");
             pulo--;
-        }else {
-            console.log("Não pode mais pular")
+        }else if(respUsu == "0") {
+            console.log("Não pode mais pular\n")
         }
-         if(respUsu != perguntas[n].res){
+        
+        
+        if(respUsu != perguntas[n].res && respUsu != "0"){
         console.log("Resposta errada!\n Infelizmente voce perdeu tudo!\n");
              break;
             }
@@ -101,18 +146,23 @@ while(play = true){
                 premioAcumu = premio[n2]
                 console.log("Certa resposta! ");}
                 if(n2 < 9 && respUsu == perguntas[n].res){
-                    var desistir = user.questionInt("Voce deseja desistir?\n 1 - Quero desistir!\n 2 - Quero continuar!\n ");
+                    var desistir = user.questionInt("Voce deseja desistir?\n 1 - Quero desistir!\n 2 - Quero continuar!\n ")
+                    n = Math.floor(Math.random() * 13);
+                    n2++;
                     if(desistir == 1){
                         premioAcumu = premioAcumu/2;
                         play = false;
                         console.log("Voce esta saindo com "+premioAcumu+" reais");
                         break;
                     }
-                }else{
-                    break
                 }
-                n2++
-            }
+                //  else{
+                //     break
+                //  }
+                
+            
+        }
+        
             
             if(n2==9 && respUsu == perguntas[n].res){
                 console.log("--------------------  PARABENS  --------------------\n");
