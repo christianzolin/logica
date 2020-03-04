@@ -7,7 +7,6 @@
 var user = require('readline-sync')
 
 function num_perfeito(num) {
-    var div = 1
     var soma = 0
     for(var x =1;x<num;x++){
     if(num%x==0){
