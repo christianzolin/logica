@@ -16,12 +16,22 @@ var numiguais = []
 
 while(num1.length < 5){
     var inserido = user.questionInt("Player 1: insira um numero de 1 a 10: ")
-    num1.push(inserido)
+    if(inserido>0 && inserido<=10){
+        num1.push(inserido)
+    }
+    else{
+        console.log("Insira um numero de 1 a 10")
+    }
 }
 
 while(num2.length < 5){
     var inserido = user.questionInt("Player 2: insira um numero de 1 a 10: ")
-    num2.push(inserido)
+    if(inserido>0 && inserido<=10){
+        num2.push(inserido)
+    }
+    else{
+        console.log("Insira um numero de 1 a 10")
+    }
 }
 
 for(var i=0;i<num1.length;i++){
