@@ -10,7 +10,7 @@ var json = fs.readFileSync("./cars.json")
 var carros = JSON.parse(json)
 var x = 0
 
-var carrosJapao = carros.filter((carro)=>{
+carrosJapao = carros.filter((carro)=>{
     if(carro.Origin === "Japan"){
         x++;
     }
